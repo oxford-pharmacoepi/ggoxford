@@ -19,3 +19,5 @@ Imports:
     dplyr,
     PatientProfiles,
     rlang
+Remotes:
+    PatientProfiles
