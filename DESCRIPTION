@@ -20,4 +20,4 @@ Imports:
     PatientProfiles,
     rlang
 Remotes:
-    PatientProfiles
+    darwin-eu-dev/PatientProfiles
