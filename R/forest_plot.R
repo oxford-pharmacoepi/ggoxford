@@ -1,4 +1,17 @@
 
+#' Forest Plot - Oxford-Pharmacoepi style
+#'
+#' @param data: Inlcude your data frame.
+#' @param "outcome_labels": name of your column including the  labels. It has to go within " ".
+#' @param "estimate": include name of the column with RR, IR, HR, etc. It has to go within " ".
+#' @param "lowCI": include name of the column with the low 95% confidence interval value. It has to go within " ".
+#' @param "highCI": include name of the column with the high 95% confidence interval value. It has to go within " ".
+#'
+#' @return
+#' @export
+#'
+#' @examples
+
 forest_plot<-function(data, outcome_labels, estimate, lowCI, highCI){
 
 data %>%
