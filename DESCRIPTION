@@ -16,8 +16,11 @@ Config/testthat/parallel: true
 RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 Imports: 
+    checkmate,
     dplyr,
+    ggplot2,
     PatientProfiles,
-    rlang
+    rlang,
+    tibble
 Remotes:
     darwin-eu-dev/PatientProfiles
