@@ -16,6 +16,7 @@ getBarChart <- function(tab, var){
     errorMessage$push(glue::glue("- {tab} is not a tibble or dataframe"))
   }
 
-  ggplot2::ggplot(tab, ggplot2::aes(var)) +
+  p <- ggplot2::ggplot(tab, ggplot2::aes(var)) +
     ggplot2::geom_bar()
+  return(p)
 }
