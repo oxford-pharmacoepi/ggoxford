@@ -4,10 +4,12 @@
 \alias{mockSummarisedResult}
 \title{Function to create a mock summarised result tibble.}
 \usage{
-mockSummarisedResult(seed = 1)
+mockSummarisedResult(seed = 1, populationSize = 10)
 }
 \arguments{
 \item{seed}{Seed value for the random mock data generated}
+
+\item{populationSize}{choose size of the population}
 }
 \description{
 Function to create a mock summarised result tibble.
