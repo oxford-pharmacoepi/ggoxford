@@ -12,7 +12,11 @@
 #' mockSummarisedResult()
 #' }
 #'
-mockSummarisedResult <- function(seed = 1, populationSize=5) {
+mockSummarisedResult <- function(seed = 1, populationSize=10) {
+  errorMessage <- checkmate::makeAssertCollection()
+  data_check <- checkmate::assertNumber(populationSize, add =errorMessage)
+  seed_check <- checkmate::assertNumber(seed, add =errorMessage)
+  checkmate::reportAssertions(collection = errorMessage)
   set.seed(seed = seed)
   res <- dplyr::tibble(
     subject_id = 1:populationSize,
