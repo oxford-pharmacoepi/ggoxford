@@ -10,6 +10,7 @@ License: Apache License (>= 2)
 Encoding: UTF-8
 LazyData: true
 Suggests: 
+    glue,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Config/testthat/parallel: true
@@ -18,6 +19,8 @@ Roxygen: list(markdown = TRUE)
 Imports: 
     dplyr,
     PatientProfiles,
-    rlang
+    rlang,
+    checkmate,
+    ggplot2
 Remotes:
     darwin-eu-dev/PatientProfiles

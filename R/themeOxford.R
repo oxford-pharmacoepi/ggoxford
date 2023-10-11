@@ -15,7 +15,7 @@
 #' }
 #'
 themeOxford <- function(plot,
-                        base_size = 8) {
+                        baseSize = 8) {
 
   errorMessage <- checkmate::makeAssertCollection()
   plot_check<-ggplot2::is.ggplot(plot)
@@ -24,19 +24,19 @@ themeOxford <- function(plot,
     errorMessage$push(glue::glue("- {data} is not a ggplot"))
   }
 
-  base_size_check<-any(class(base_size) %in%
+  base_size_check<-any(class(baseSize) %in%
                     c("number"))
-  checkmate::assertTRUE(data_check, add =errorMessage)
+  checkmate::assertTRUE(base_size_check, add =errorMessage)
   if (!isTRUE(base_size_check)) {
     errorMessage$push(glue::glue("- Base size is not a number"))
   }
 
   plot <- plot+
           ggplot2::theme(
-                plot.title=ggplot2::element_text(size= base_size+4),
-                axis.title.x = ggplot2::element_text(size = base_size+2),
-                axis.text.x = ggplot2::element_text(size = base_size),
-                axis.title.y = ggplot2::element_text(size = base_size+2),
+                plot.title=ggplot2::element_text(size=baseSize+4),
+                axis.title.x = ggplot2::element_text(size = baseSize+2),
+                axis.text.x = ggplot2::element_text(size = baseSize),
+                axis.title.y = ggplot2::element_text(size = baseSize+2),
                 panel.border = ggplot2::element_blank(),
                 panel.background = ggplot2::element_blank(),
                 panel.grid.major = ggplot2::element_blank(),
