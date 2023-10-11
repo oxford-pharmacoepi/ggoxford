@@ -4,12 +4,16 @@
 \alias{getBarChart}
 \title{getBarChart summary}
 \usage{
-getBarChart(tab, var)
+getBarChart(tab, cohort, var = c("age_group"), color = "grey")
 }
 \arguments{
 \item{tab}{dataframe}
 
+\item{cohort}{cohort}
+
 \item{var}{variable that is going to be for the bar chart}
+
+\item{color}{color}
 }
 \value{
 plot

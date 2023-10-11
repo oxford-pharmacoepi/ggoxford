@@ -1,5 +1,7 @@
 test_that("result is a ggplot object", {
-  p <- getBarChart(data.frame(a=floor(runif(10, min=0, max=5))),"a")
+  data <- ggoxford::mockSummarisedResult()
+
+  p <- getBarChart(data,cohort = 'Cohort 1')
 
   expect_true(ggplot2::is.ggplot(p))
 
