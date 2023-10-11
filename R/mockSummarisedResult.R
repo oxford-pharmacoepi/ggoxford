@@ -3,6 +3,8 @@
 #' @param seed Seed value for the random mock data generated
 #' @param startDate Start date for the mock data
 #' @param endDate End date for the mock data
+#' @param populationSize choose size of the population
+#'
 #' @export
 #'
 #' @examples
@@ -12,20 +14,24 @@
 #' mockSummarisedResult(seed = 1,as.Date("2021-01-01"),as.Date("2021-12-31"))
 #' }
 #'
-mockSummarisedResult <- function(seed = 1, startDate, endDate) {
+mockSummarisedResult <- function(seed = 1, startDate, endDate, populationSize=10) {
+  errorMessage <- checkmate::makeAssertCollection()
+  data_check <- checkmate::assertNumber(populationSize, add =errorMessage)
+  seed_check <- checkmate::assertNumber(seed, add =errorMessage)
+  checkmate::reportAssertions(collection = errorMessage)
   set.seed(seed = seed)
   res <- dplyr::tibble(
-    subject_id = 1:10,
+    subject_id = 1:populationSize,
     cohort_start_date = as.Date(
-      stats::runif(n = 10, min = 0, max = as.numeric(.env$endDate - .env$startDate)), origin = as.Date(.env$startDate)
+      stats::runif(n = populationSize, min = 0, max = as.numeric(.env$endDate - .env$startDate)), origin = as.Date(.env$startDate)
     ),
-    age = sample(x = 0:80, size = 10, replace = TRUE),
-    sex = sample(x = c("Male", "Female"), size = 10, replace = TRUE),
-    cohort_name = sample(x = c("Cohort 1", "Cohort 2"), size = 10, replace = TRUE),
-    blood_type = sample(x = c("0", "a", "b", "ab"), size = 10, replace = TRUE)
+    age = sample(x = 0:80, size = populationSize, replace = TRUE),
+    sex = sample(x = c("Male", "Female"), size = populationSize, replace = TRUE),
+    cohort_name = sample(x = c("Cohort 1", "Cohort 2"), size = populationSize, replace = TRUE),
+    blood_type = sample(x = c("0", "a", "b", "ab"), size = populationSize, replace = TRUE)
   ) |>
     dplyr::mutate(cohort_end_date = .data$cohort_start_date + stats::runif(
-      n = 10, min = 0, max = as.numeric(.env$endDate - .data$cohort_start_date)
+      n = populationSize, min = 0, max = as.numeric(.env$endDate - .data$cohort_start_date)
     )) |>
     PatientProfiles::addCategories(
       variable = "age",
