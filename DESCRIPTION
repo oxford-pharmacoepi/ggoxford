@@ -18,6 +18,8 @@ Roxygen: list(markdown = TRUE)
 Imports: 
     checkmate,
     dplyr,
+    ggplot2,
+    magrittr,
     PatientProfiles,
     rlang
 Remotes:
