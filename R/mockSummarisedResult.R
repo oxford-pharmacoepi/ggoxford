@@ -1,6 +1,7 @@
 #' Function to create a mock summarised result tibble.
 #'
 #' @param seed Seed value for the random mock data generated
+#' @param populationsize choose size of the population
 #'
 #' @export
 #'
@@ -11,20 +12,20 @@
 #' mockSummarisedResult()
 #' }
 #'
-mockSummarisedResult <- function(seed = 1) {
+mockSummarisedResult <- function(seed = 1, populationsize=5) {
   set.seed(seed = seed)
   res <- dplyr::tibble(
-    subject_id = 1:10,
+    subject_id = 1:populationsize,
     cohort_start_date = as.Date(
-      stats::runif(n = 10, min = 14610, max = 18627), origin = "1970-01-01"
+      stats::runif(n = populationsize, min = 14610, max = 18627), origin = "1970-01-01"
     ),
-    age = sample(x = 0:80, size = 10, replace = TRUE),
-    sex = sample(x = c("Male", "Female"), size = 10, replace = TRUE),
-    cohort_name = sample(x = c("Cohort 1", "Cohort 2"), size = 10, replace = TRUE),
-    blood_type = sample(x = c("0", "a", "b", "ab"), size = 10, replace = TRUE)
+    age = sample(x = 0:80, size = populationsize, replace = TRUE),
+    sex = sample(x = c("Male", "Female"), size = populationsize, replace = TRUE),
+    cohort_name = sample(x = c("Cohort 1", "Cohort 2"), size = populationsize, replace = TRUE),
+    blood_type = sample(x = c("0", "a", "b", "ab"), size = populationsize, replace = TRUE)
   ) |>
     dplyr::mutate(cohort_end_date = .data$cohort_start_date + stats::runif(
-      n = 10, min = 0, max = 800
+      n = populationsize, min = 0, max = 800
     )) |>
     PatientProfiles::addCategories(
       variable = "age",
