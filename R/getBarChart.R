@@ -21,6 +21,7 @@ getBarChart <- function(tab, var){
   if (!isTRUE(var_check)){
     errorMessage$push(glue::glue("- {var} is not a column of the dataframe"))
   }
+
   checkmate::reportAssertions(collection = errorMessage)
 
   p <- ggplot2::ggplot(tab, ggplot2::aes(var)) +
