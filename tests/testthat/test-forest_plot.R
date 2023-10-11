@@ -9,13 +9,15 @@ forest_plot(df,"label","mean","lower","upper")
 
 #Test
 test_that("check forest plot", {
-  library(ggoxford)
+
   result <- forest_plot(df,"label","mean","lower","upper")
 
   expect_true(all(class(result) == c("gg","ggplot")))
 
-  expect_error(all(class(result) == c("not gg","ggplot")))
+  expect_false(all(class(result) == c("not gg","not ggplot")))
 
-  expect_error(all(class(result) == c("gg","not ggplot")))
+  expect_false(!any(class(result) == c("gg","not ggplot")))
+
 
 })
+
