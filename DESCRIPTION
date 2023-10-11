@@ -17,6 +17,8 @@ RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 Imports: 
     dplyr,
+    ggplot2,
+    magrittr,
     PatientProfiles,
     rlang
 Remotes:
