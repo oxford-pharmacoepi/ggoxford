@@ -4,10 +4,14 @@
 \alias{mockSummarisedResult}
 \title{Function to create a mock summarised result tibble.}
 \usage{
-mockSummarisedResult(seed = 1)
+mockSummarisedResult(seed = 1, start_date, end_date)
 }
 \arguments{
 \item{seed}{Seed value for the random mock data generated}
+
+\item{start_date}{Start date for the mock data}
+
+\item{end_date}{End date for the mock data}
 }
 \description{
 Function to create a mock summarised result tibble.
@@ -16,7 +20,7 @@ Function to create a mock summarised result tibble.
 \donttest{
 library(ggoxford)
 
-mockSummarisedResult()
+mockSummarisedResult(seed = 1,as.Date("2021-01-01"),as.Date("2021-12-31"))
 }
 
 }
