@@ -2,3 +2,4 @@
 
 export(mockSummarisedResult)
 importFrom(rlang,.data)
+importFrom(rlang,.env)

@@ -4,14 +4,14 @@
 \alias{mockSummarisedResult}
 \title{Function to create a mock summarised result tibble.}
 \usage{
-mockSummarisedResult(seed = 1, start_date, end_date)
+mockSummarisedResult(seed = 1, startDate, endDate)
 }
 \arguments{
 \item{seed}{Seed value for the random mock data generated}
 
-\item{start_date}{Start date for the mock data}
+\item{startDate}{Start date for the mock data}
 
-\item{end_date}{End date for the mock data}
+\item{endDate}{End date for the mock data}
 }
 \description{
 Function to create a mock summarised result tibble.

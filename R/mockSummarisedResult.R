@@ -1,8 +1,8 @@
 #' Function to create a mock summarised result tibble.
 #'
 #' @param seed Seed value for the random mock data generated
-#' @param start_date Start date for the mock data
-#' @param end_date End date for the mock data
+#' @param startDate Start date for the mock data
+#' @param endDate End date for the mock data
 #' @export
 #'
 #' @examples
@@ -12,12 +12,12 @@
 #' mockSummarisedResult(seed = 1,as.Date("2021-01-01"),as.Date("2021-12-31"))
 #' }
 #'
-mockSummarisedResult <- function(seed = 1, start_date, end_date) {
+mockSummarisedResult <- function(seed = 1, startDate, endDate) {
   set.seed(seed = seed)
   res <- dplyr::tibble(
     subject_id = 1:10,
     cohort_start_date = as.Date(
-      stats::runif(n = 10, min = 0, max = as.numeric(end_date - start_date)), origin = as.Date(start_date)
+      stats::runif(n = 10, min = 0, max = as.numeric(.env$endDate - .env$startDate)), origin = as.Date(.env$startDate)
     ),
     age = sample(x = 0:80, size = 10, replace = TRUE),
     sex = sample(x = c("Male", "Female"), size = 10, replace = TRUE),
@@ -25,7 +25,7 @@ mockSummarisedResult <- function(seed = 1, start_date, end_date) {
     blood_type = sample(x = c("0", "a", "b", "ab"), size = 10, replace = TRUE)
   ) |>
     dplyr::mutate(cohort_end_date = .data$cohort_start_date + stats::runif(
-      n = 10, min = 0, max = as.numeric(end_date - .data$cohort_start_date)
+      n = 10, min = 0, max = as.numeric(.env$endDate - .data$cohort_start_date)
     )) |>
     PatientProfiles::addCategories(
       variable = "age",
