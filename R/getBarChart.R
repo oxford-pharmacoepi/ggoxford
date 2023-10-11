@@ -1,3 +1,12 @@
+#' getBarChart summary
+#'
+#' @param tab dataframe
+#' @param var variable that is going to be for the bar chart
+#'
+#' @return plot
+#' @export
+#'
+#' @examples
 getBarChart <- function(tab, var){
   errorMessage <- checkmate::makeAssertCollection()
   data_check<-any(class(tab) %in%
@@ -7,5 +16,6 @@ getBarChart <- function(tab, var){
     errorMessage$push(glue::glue("- {tab} is not a tibble or dataframe"))
   }
 
-  ggplot2::ggplot(tab, aes(var)) + geom_bar()
+  ggplot2::ggplot(tab, ggplot2::aes(var)) +
+    ggplot2::geom_bar()
 }

@@ -19,8 +19,8 @@ Imports:
     checkmate,
     dplyr,
     ggplot2,
+    glue,
     PatientProfiles,
     rlang,
-    tibble
 Remotes:
     darwin-eu-dev/PatientProfiles
