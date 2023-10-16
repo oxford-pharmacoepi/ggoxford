@@ -2,7 +2,9 @@
 
 export("%>%")
 export(box_plot)
+export(forestPlot)
 export(mockSummarisedResult)
 importFrom(magrittr,"%>%")
 importFrom(rlang,.data)
 importFrom(rlang,.env)
+importFrom(stats,median)

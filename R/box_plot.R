@@ -24,29 +24,24 @@ box_plot <- function(data, group_level = "Cohort 1", strata_name = "Overall", st
     dplyr::filter(.data$group_level == .env$group_level) %>%
     dplyr::filter(.data$strata_name == .env$strata_name) %>%
     dplyr::filter(.data$strata_level == .env$strata_level) %>%
-    dplyr::filter(.data$variable == .env$variable)
+    dplyr::filter(.data$variable == .env$variable) %>%
+    dplyr::select("variable", "estimate_type", "estimate") %>%
+    dplyr::mutate(estimate = as.numeric(.data$estimate)) %>%
+    tidyr::pivot_wider(names_from = "estimate_type", values_from = "estimate")
 
-  subdata_min <- subdata %>%
-    dplyr::filter(.data$estimate_type == "min") %>%
-    dplyr::pull(.data$estimate)
-
-  subdata_25 <- subdata %>%
-    dplyr::filter(.data$estimate_type == "q25") %>%
-    dplyr::pull(.data$estimate)
-
-  subdata_med <- subdata %>%
-    dplyr::filter(.data$estimate_type == "median") %>%
-    dplyr::pull(.data$estimate)
-
-  subdata_75 <- subdata %>%
-    dplyr::filter(.data$estimate_type == "q75") %>%
-    dplyr::pull(.data$estimate)
-
-  subdata_max <- subdata %>%
-    dplyr::filter(.data$estimate_type == "max") %>%
-    dplyr::pull(.data$estimate)
-
-  plot <- ggplot2::ggplot(subdata, ggplot2::aes(xmin = subdata_min, lower = subdata_25, middle = subdata_med, upper = subdata_75, xmax = subdata_max)) + ggplot2::geom_boxplot()
+  plot <- ggplot2::ggplot(
+    subdata,
+    ggplot2::aes(
+      ymin = .data$min, lower = .data$q25, middle = .data$median,
+      upper = .data$q75, ymax = .data$max, x = .data$variable
+    )
+  ) +
+    ggplot2::geom_boxplot(stat = "identity", width = 0.4, fill = "lightblue", color = "blue") +
+    ggplot2::labs(
+      title = "Boxplot",
+      x = "Variable",
+      y = "Values"
+    )
   return(plot)
 }
 
