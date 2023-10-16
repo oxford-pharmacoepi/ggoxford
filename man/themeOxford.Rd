@@ -9,7 +9,7 @@ themeOxford(plot, baseSize = 8)
 \arguments{
 \item{plot}{ggplot}
 
-\item{base_size}{base font size, given in pts.}
+\item{baseSize}{base font size, given in pts.}
 }
 \value{
 ggplot

@@ -2,7 +2,7 @@
 #'
 #'
 #' @param plot ggplot
-#' @param base_size base font size, given in pts.
+#' @param baseSize base font size, given in pts.
 #'
 #' @return ggplot
 #'

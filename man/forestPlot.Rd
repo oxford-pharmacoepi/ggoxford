@@ -7,15 +7,15 @@
 forestPlot(data, outcomelabels, estimate, lowCi, highCi)
 }
 \arguments{
-\item{data:}{Include your data frame.}
+\item{data}{Include your data frame.}
 
-\item{"outcome_labels":}{name of your column including the  labels. It has to go within " ".}
+\item{outcomelabels}{name of your column including the  labels. It has to go within " ".}
 
-\item{"estimate":}{include name of the column with RR, IR, HR, etc. It has to go within " ".}
+\item{estimate}{include name of the column with RR, IR, HR, etc. It has to go within " ".}
 
-\item{"lowCI":}{include name of the column with the low 95\% confidence interval value. It has to go within " ".}
+\item{lowCi}{include name of the column with the low 95\% confidence interval value. It has to go within " ".}
 
-\item{"highCI":}{include name of the column with the high 95\% confidence interval value. It has to go within " ".}
+\item{highCi}{include name of the column with the high 95\% confidence interval value. It has to go within " ".}
 }
 \description{
 Forest Plot - Oxford-Pharmacoepi style
