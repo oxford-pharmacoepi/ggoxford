@@ -16,6 +16,9 @@
     <loc>/reference/box_plot.html</loc>
   </url>
   <url>
+    <loc>/reference/forestPlot.html</loc>
+  </url>
+  <url>
     <loc>/reference/ggoxford-package.html</loc>
   </url>
   <url>
@@ -26,5 +29,8 @@
   </url>
   <url>
     <loc>/reference/pipe.html</loc>
+  </url>
+  <url>
+    <loc>/reference/themeOxford.html</loc>
   </url>
 </urlset>
