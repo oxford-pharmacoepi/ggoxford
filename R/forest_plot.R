@@ -1,10 +1,10 @@
 #' Forest Plot - Oxford-Pharmacoepi style
 #'
-#' @param data: Include your data frame.
-#' @param "outcome_labels": name of your column including the  labels. It has to go within " ".
-#' @param "estimate": include name of the column with RR, IR, HR, etc. It has to go within " ".
-#' @param "lowCI": include name of the column with the low 95% confidence interval value. It has to go within " ".
-#' @param "highCI": include name of the column with the high 95% confidence interval value. It has to go within " ".
+#' @param data Include your data frame.
+#' @param outcomelabels name of your column including the  labels. It has to go within " ".
+#' @param estimate include name of the column with RR, IR, HR, etc. It has to go within " ".
+#' @param lowCi include name of the column with the low 95% confidence interval value. It has to go within " ".
+#' @param highCi include name of the column with the high 95% confidence interval value. It has to go within " ".
 #'
 #' @return
 #' @export
