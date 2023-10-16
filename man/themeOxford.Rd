@@ -17,12 +17,3 @@ ggplot
 \description{
 Function to create a ggplot theme
 }
-\examples{
-\donttest{
-library(ggoxford)
-
-plot +
- themeOxford()
-}
-
-}

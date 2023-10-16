@@ -6,14 +6,6 @@
 #'
 #' @return ggplot
 #'
-#' @examples
-#' \donttest{
-#' library(ggoxford)
-#'
-#' plot +
-#'  themeOxford()
-#' }
-#'
 themeOxford <- function(plot,
                         baseSize = 8) {
 

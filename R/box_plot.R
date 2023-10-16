@@ -32,12 +32,12 @@ box_plot <- function(data, group_level = "Cohort 1", strata_name = "Overall", st
   plot <- ggplot2::ggplot(
     subdata,
     ggplot2::aes(
-      ymin = min, lower = q25, middle = median, upper = q75, ymax = max,
-      x = variable
+      ymin = .data$min, lower = .data$q25, middle = .data$median,
+      upper = .data$q75, ymax = .data$max, x = .data$variable
     )
   ) +
     ggplot2::geom_boxplot(stat = "identity", width = 0.4, fill = "lightblue", color = "blue") +
-    labs(
+    ggplot2::labs(
       title = "Boxplot",
       x = "Variable",
       y = "Values"
