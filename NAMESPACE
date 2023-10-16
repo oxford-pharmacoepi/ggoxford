@@ -2,6 +2,7 @@
 
 export("%>%")
 export(box_plot)
+export(forestPlot)
 export(mockSummarisedResult)
 importFrom(magrittr,"%>%")
 importFrom(rlang,.data)
