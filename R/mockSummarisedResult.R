@@ -12,16 +12,17 @@
 #' mockSummarisedResult()
 #' }
 #'
-mockSummarisedResult <- function(seed = 1, populationSize=10) {
+mockSummarisedResult <- function(seed = 1, populationSize = 10) {
   errorMessage <- checkmate::makeAssertCollection()
-  data_check <- checkmate::assertNumber(populationSize, add =errorMessage)
-  seed_check <- checkmate::assertNumber(seed, add =errorMessage)
+  data_check <- checkmate::assertNumber(populationSize, add = errorMessage)
+  seed_check <- checkmate::assertNumber(seed, add = errorMessage)
   checkmate::reportAssertions(collection = errorMessage)
   set.seed(seed = seed)
   res <- dplyr::tibble(
     subject_id = 1:populationSize,
     cohort_start_date = as.Date(
-      stats::runif(n = populationSize, min = 14610, max = 18627), origin = "1970-01-01"
+      stats::runif(n = populationSize, min = 14610, max = 18627),
+      origin = "1970-01-01"
     ),
     age = sample(x = 0:80, size = populationSize, replace = TRUE),
     sex = sample(x = c("Male", "Female"), size = populationSize, replace = TRUE),
@@ -34,7 +35,8 @@ mockSummarisedResult <- function(seed = 1, populationSize=10) {
     PatientProfiles::addCategories(
       variable = "age",
       categories = list("age_group" = list(
-        c(0, 19), c(20, 39), c(40, 59), c(60, 79), ">=80" = c(80, Inf)
+        c(0, 19), c(20, 39), c(40, 59), c(60, 79),
+        ">=80" = c(80, Inf)
       ))
     ) |>
     dplyr::select(
@@ -50,4 +52,3 @@ mockSummarisedResult <- function(seed = 1, populationSize=10) {
     )
   return(res)
 }
-

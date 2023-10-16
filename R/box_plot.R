@@ -10,8 +10,7 @@
 #' @export
 #'
 #' @examples
-#'
-box_plot <- function(data, group_level = "Cohort 1", strata_name = "Overall", strata_level = "Overall", variable = "age"){
+box_plot <- function(data, group_level = "Cohort 1", strata_name = "Overall", strata_level = "Overall", variable = "age") {
   errorStorage <- checkmate::makeAssertCollection()
   checkmate::assert_data_frame(data, add = errorStorage)
   checkmate::assert_character(group_level, add = errorStorage)
@@ -46,7 +45,7 @@ box_plot <- function(data, group_level = "Cohort 1", strata_name = "Overall", st
     dplyr::filter(.data$estimate_type == "max") %>%
     dplyr::pull(.data$estimate)
 
-  plot <- ggplot2::ggplot(subdata, ggplot2::aes(xmin = subdata_min, lower = subdata_25, middle = subdata_med, upper = subdata_75, xmax = subdata_max)) + ggplot2::geom_boxplot()
+  plot <- ggplot2::ggplot(subdata, ggplot2::aes(xmin = subdata_min, lower = subdata_25, middle = subdata_med, upper = subdata_75, xmax = subdata_max)) +
+    ggplot2::geom_boxplot()
   return(plot)
 }
-
