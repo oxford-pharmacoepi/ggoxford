@@ -24,6 +24,7 @@ Imports:
     PatientProfiles,
     rlang,
     checkmate,
-    ggplot2
+    ggplot2,
+    tidyr
 Remotes:
     darwin-eu-dev/PatientProfiles
