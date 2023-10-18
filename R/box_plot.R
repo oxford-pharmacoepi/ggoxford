@@ -10,8 +10,7 @@
 #' @export
 #'
 #' @examples
-#'
-box_plot <- function(data, group_level = "Cohort 1", strata_name = "Overall", strata_level = "Overall", variable = "age"){
+box_plot <- function(data, group_level = "Cohort 1", strata_name = "Overall", strata_level = "Overall", variable = "age") {
   errorStorage <- checkmate::makeAssertCollection()
   checkmate::assert_data_frame(data, add = errorStorage)
   checkmate::assert_character(group_level, add = errorStorage)
@@ -42,6 +41,6 @@ box_plot <- function(data, group_level = "Cohort 1", strata_name = "Overall", st
       x = "Variable",
       y = "Values"
     )
+
   return(plot)
 }
-
