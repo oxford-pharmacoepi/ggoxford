@@ -2,15 +2,26 @@ Package: ggoxford
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Authors@R: c(
+    person("Marti", "Catala", 
+    role = c("aut"), email = "marti.catalasabate@ndorms.ox.ac.uk"),
+    person("Yuchen", "Guo", role = c("aut", "cre"), email = "yuchen.guo@ndorms.ox.ac.uk"),
+    person("Mike", "Du", role = c("aut"), email = "mike.du@ndorms.ox.ac.uk"),
+    person("Edward", "Burn", role = c("aut"), email = "edward.burn@ndorms.ox.ac.uk"),
+    person("Marta", "Alcalde-Herraiz", role = c("aut"), email = "marta.alcaldeherraiz@ndorms.ox.ac.uk"),
+    person("Marta", "Pineda-Moncusi", role = c("aut"), email = "marta.pinedamoncusi@ndorms.ox.ac.uk"),
+    person("Berta", "RaventosiRoca", role = c("aut"), email = "berta.raventosiroca@ndorms.ox.ac.uk"),
+    person("Leena", "Elhussein", role = c("aut"), email = "leena.elhussein@csm.ox.ac.uk"),
+    person("Pablo", "Spivakovsky-Gonzalez", role = c("aut"), email = "orms1092@ox.ac.uk"),
+    person("Xihang", "Chen", role = c("aut"), email = "xihang.chen@ndorms.ox.ac.uk")
+    )
+Maintainer: Yuchen Guo <yuchen.guo@ndorms.ox.ac.uk>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: Apache License (>= 2)
 Encoding: UTF-8
 LazyData: true
 Suggests: 
-    glue,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Config/testthat/parallel: true
@@ -24,7 +35,6 @@ Imports:
     magrittr,
     PatientProfiles,
     rlang,
-    checkmate,
-    ggplot2
-Remotes:
-    darwin-eu-dev/PatientProfiles
+    tidyr,
+    stats,
+    glue
