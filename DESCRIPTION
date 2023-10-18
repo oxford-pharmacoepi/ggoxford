@@ -5,7 +5,7 @@ Version: 0.1.0
 Authors@R: c(
     person("Marti", "Catala", 
     role = c("aut"), email = "marti.catalasabate@ndorms.ox.ac.uk"),
-    person("Yuchen", "Guo", role = c("aut"), email = "yuchen.guo@ndorms.ox.ac.uk"),
+    person("Yuchen", "Guo", role = c("aut", "cre"), email = "yuchen.guo@ndorms.ox.ac.uk"),
     person("Mike", "Du", role = c("aut"), email = "mike.du@ndorms.ox.ac.uk"),
     person("Edward", "Burn", role = c("aut"), email = "edward.burn@ndorms.ox.ac.uk"),
     person("Marta", "Alcalde-Herraiz", role = c("aut"), email = "marta.alcaldeherraiz@ndorms.ox.ac.uk"),
