@@ -15,7 +15,7 @@ Authors@R: c(
     person("Pablo", "Spivakovsky-Gonzalez", role = c("aut"), email = "orms1092@ox.ac.uk"),
     person("Xihang", "Chen", role = c("aut"), email = "xihang.chen@ndorms.ox.ac.uk")
     )
-Maintainer: The package maintainer <yourself@somewhere.net>
+Maintainer: Yuchen Guo <yuchen.guo@ndorms.ox.ac.uk>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: Apache License (>= 2)
