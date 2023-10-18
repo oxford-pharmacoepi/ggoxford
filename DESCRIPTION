@@ -31,9 +31,9 @@ Imports:
     checkmate,
     dplyr,
     ggplot2,
+    glue,
     magrittr,
     PatientProfiles,
     rlang,
     tidyr,
-    stats,
-    glue
+    stats

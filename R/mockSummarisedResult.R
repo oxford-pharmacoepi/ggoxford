@@ -45,7 +45,7 @@ mockSummarisedResult <- function(seed = 1, populationSize = 10) {
     ) |>
     PatientProfiles::summariseResult(
       group = list("cohort_name"),
-      includeOverallGroup = FALSE,
+      includeOverallGroup = TRUE,
       strata = list("age_group", "sex"),
       includeOverallStrata = TRUE,
       minCellCount = 1
