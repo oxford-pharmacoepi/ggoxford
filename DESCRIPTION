@@ -15,7 +15,7 @@ Authors@R: c(
     role = c("aut")),
     person("Marta", "Pineda-Moncusi", "marta.pinedamoncusi@ndorms.ox.ac.uk", 
     role = c("aut")),
-    person("Berta", "Raventos i Roca", "berta.raventosiroca@ndorms.ox.ac.uk", 
+    person("Berta", "RaventosiRoca", "berta.raventosiroca@ndorms.ox.ac.uk", 
     role = c("aut")),
     person("Leena", "Elhussein", "leena.elhussein@csm.ox.ac.uk", 
     role = c("aut")),
