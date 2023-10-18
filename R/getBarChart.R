@@ -1,21 +1,22 @@
 #' getBarChart summary
 #'
-#' @param tab dataframe
-#' @param cohort cohort
-#' @param var variable that is going to be for the bar chart
-#' @param color color
+#' @param data Input data.
+#' @param variable Variable to prepare the barchart.
+#' @param groupName Group name to use.
+#' @param groupLevel Group level to use.
+#' @param strataName Strata name to use.
+#' @param strataLevel Strata levels to use.
 #'
 #' @return plot
 #' @export
 #'
 #' @examples
-getBarChart <- function(data,
-                        group_name   = 'cohort_name'
-                        group_level  = 'Cohort 1'
-                        strata_name  = 'Overall'
-                        strata_level = 'Overall'
-                        variable){
-
+plotBarChart <- function(data,
+                         variable,
+                         groupName = "cohort_name",
+                         groupLevel = "Cohort 1",
+                         strataName = "Overall",
+                         strataLevel = "Overall") {
   # errorMessage <- checkmate::makeAssertCollection()
   #
   # data_check <- any(class(tab) %in% c("tbl_df", "data.frame","tibble"))
@@ -39,12 +40,12 @@ getBarChart <- function(data,
   # checkmate::reportAssertions(collection = errorMessage)
 
   tab <- data %>%
-    dplyr::filter(.data$group_name == .env$group_name) %>%
-    dplyr::filter(.data$group_level == .env$group_level) %>%
-    dplyr::filter(.data$strata_name == .env$strata_name) %>%
-    dplyr::filter(.data$strata_level == .env$strata_level) %>%
+    dplyr::filter(.data$group_name == .env$groupName) %>%
+    dplyr::filter(.data$group_level == .env$groupLevel) %>%
+    dplyr::filter(.data$strata_name == .env$strataName) %>%
+    dplyr::filter(.data$strata_level == .env$strataLevel) %>%
     dplyr::filter(.data$estimate_type == "count") %>%
-    dplyr::filter(.data$variable == .env$var)
+    dplyr::filter(.data$variable == .env$variable)
 
 
   p <- ggplot2::ggplot(tab, ggplot2::aes(x = .data$variable_level)) +

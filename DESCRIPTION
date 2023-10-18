@@ -36,5 +36,4 @@ Imports:
     PatientProfiles,
     rlang,
     tidyr,
-    stats,
-    glue
+    stats

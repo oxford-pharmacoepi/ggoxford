@@ -8,4 +8,21 @@
 \description{
 More about what it does (maybe more than one line) Use four spaces when indenting paragraphs within the Description.
 }
+\author{
+\strong{Maintainer}: Yuchen Guo \email{yuchen.guo@ndorms.ox.ac.uk}
+
+Authors:
+\itemize{
+  \item Marti Catala \email{marti.catalasabate@ndorms.ox.ac.uk}
+  \item Mike Du \email{mike.du@ndorms.ox.ac.uk}
+  \item Edward Burn \email{edward.burn@ndorms.ox.ac.uk}
+  \item Marta Alcalde-Herraiz \email{marta.alcaldeherraiz@ndorms.ox.ac.uk}
+  \item Marta Pineda-Moncusi \email{marta.pinedamoncusi@ndorms.ox.ac.uk}
+  \item Berta RaventosiRoca \email{berta.raventosiroca@ndorms.ox.ac.uk}
+  \item Leena Elhussein \email{leena.elhussein@csm.ox.ac.uk}
+  \item Pablo Spivakovsky-Gonzalez \email{orms1092@ox.ac.uk}
+  \item Xihang Chen \email{xihang.chen@ndorms.ox.ac.uk}
+}
+
+}
 \keyword{internal}
