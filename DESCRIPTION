@@ -2,7 +2,28 @@ Package: ggoxford
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
-Author: Who wrote it
+Authors@R: c(
+    person("Marti", "Catala", "marti.catalasabate@ndorms.ox.ac.uk", 
+    role = c("aut"), comment = c(ORCID = "0000-0003-3308-9905")),
+    person("Yuchen", "Guo", "yuchen.guo@ndorms.ox.ac.uk", role = c("aut"),
+    comment = c(ORCID = "0000-0002-0847-4855")),
+    person("Mike", "Du", "mike.du@ndorms.ox.ac.uk", role = c("aut"), 
+    comment = c(ORCID = "0000-0002-9517-8834")),
+    person("Edward", "Burn", "edward.burn@ndorms.ox.ac.uk", role = c("aut"),
+    comment = c(ORCID = "0000-0002-9286-1128")),
+    person("Marta", "Alcalde-Herraiz", "marta.alcaldeherraiz@ndorms.ox.ac.uk", 
+    role = c("aut")),
+    person("Marta", "Pineda-Moncusi", "marta.pinedamoncusi@ndorms.ox.ac.uk", 
+    role = c("aut")),
+    person("Berta", "Raventos i Roca", "berta.raventosiroca@ndorms.ox.ac.uk", 
+    role = c("aut")),
+    person("Leena", "Elhussein", "leena.elhussein@csm.ox.ac.uk", 
+    role = c("aut")),
+    person("Pablo", "Spivakovsky-Gonzalez", "orms1092@ndorms.ox.ac.uk", 
+    role = c("aut"))
+    person("Xihang", "Chen", "xihang.chen@ndorms.ox.ac.uk", 
+    role = c("aut"))
+    )
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
