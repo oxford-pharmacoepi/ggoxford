@@ -3,26 +3,17 @@ Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
 Authors@R: c(
-    person("Marti", "Catala", "marti.catalasabate@ndorms.ox.ac.uk", 
-    role = c("aut"), comment = c(ORCID = "0000-0003-3308-9905")),
-    person("Yuchen", "Guo", "yuchen.guo@ndorms.ox.ac.uk", role = c("aut"),
-    comment = c(ORCID = "0000-0002-0847-4855")),
-    person("Mike", "Du", "mike.du@ndorms.ox.ac.uk", role = c("aut"), 
-    comment = c(ORCID = "0000-0002-9517-8834")),
-    person("Edward", "Burn", "edward.burn@ndorms.ox.ac.uk", role = c("aut"),
-    comment = c(ORCID = "0000-0002-9286-1128")),
-    person("Marta", "Alcalde-Herraiz", "marta.alcaldeherraiz@ndorms.ox.ac.uk", 
-    role = c("aut")),
-    person("Marta", "Pineda-Moncusi", "marta.pinedamoncusi@ndorms.ox.ac.uk", 
-    role = c("aut")),
-    person("Berta", "RaventosiRoca", "berta.raventosiroca@ndorms.ox.ac.uk", 
-    role = c("aut")),
-    person("Leena", "Elhussein", "leena.elhussein@csm.ox.ac.uk", 
-    role = c("aut")),
-    person("Pablo", "Spivakovsky-Gonzalez", "orms1092@ndorms.ox.ac.uk", 
-    role = c("aut"))
-    person("Xihang", "Chen", "xihang.chen@ndorms.ox.ac.uk", 
-    role = c("aut"))
+    person("Marti", "Catala", 
+    role = c("aut"), email = "marti.catalasabate@ndorms.ox.ac.uk"),
+    person("Yuchen", "Guo", role = c("aut"), email = "yuchen.guo@ndorms.ox.ac.uk"),
+    person("Mike", "Du", role = c("aut"), email = "mike.du@ndorms.ox.ac.uk"),
+    person("Edward", "Burn", role = c("aut"), email = "edward.burn@ndorms.ox.ac.uk"),
+    person("Marta", "Alcalde-Herraiz", role = c("aut"), email = "marta.alcaldeherraiz@ndorms.ox.ac.uk"),
+    person("Marta", "Pineda-Moncusi", role = c("aut"), email = "marta.pinedamoncusi@ndorms.ox.ac.uk"),
+    person("Berta", "RaventosiRoca", role = c("aut"), email = "berta.raventosiroca@ndorms.ox.ac.uk"),
+    person("Leena", "Elhussein", role = c("aut"), email = "leena.elhussein@csm.ox.ac.uk"),
+    person("Pablo", "Spivakovsky-Gonzalez", role = c("aut"), email = "orms1092@ox.ac.uk"),
+    person("Xihang", "Chen", role = c("aut"), email = "xihang.chen@ndorms.ox.ac.uk")
     )
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
