@@ -38,7 +38,7 @@ variable <- "age"
 box_plot(my_data,"Cohort 1","Overall","Overall","age")
 ```
 
-![](Box%20Plot.png)
+![](BoxPlot.png)
 
 ### Create a forest plot
 
@@ -56,7 +56,7 @@ For example,
 
 > result \<- forestPlot(df, "label", "mean", "lower", "upper")
 >
-> ![](Forest%20plot.png)
+> ![](ForestPlot.png)
 
 ### Create mockSummarisedResult
 
