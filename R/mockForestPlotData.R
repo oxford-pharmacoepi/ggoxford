@@ -22,8 +22,10 @@ mockForestPlotData <- function(seed = 1, numRows = 10) {
     variable = paste0("Variable ", 1:numRows),
     variable_level = NA,
     variable_type = "numeric",
-    estimate = paste0(round((stats::runif(n = numRows, min = 0.51, max = 3.01)),2)," ± ",(round((stats::runif(n = numRows, min = 0.25, max = 0.75)),2))),
+    estimate = round((stats::runif(n = numRows, min = 0.51, max = 3.01)),2),
     estimate_type = "95% confidence interval"
   )
+  res <- res |> dplyr::mutate(estimate = paste0("(",estimate,", ",(estimate - round((stats::runif(n = numRows, min = 0.25, max = 0.75)),2)),", ",(estimate + round((stats::runif(n = numRows, min = 0.25, max = 0.75)),2)),")"))
+  res <- res |> dplyr::mutate(estimate_type = "(Mean, 95% Lower CI, 95% Upper CI)")
   return(res)
 }
