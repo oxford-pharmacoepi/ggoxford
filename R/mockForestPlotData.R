@@ -1,0 +1,27 @@
+#' Function to create mock forest plot data.
+#'
+#' @param seed Seed value for the random mock data generated
+#' @param numRows Number of rows
+#'
+#' @export
+#'
+#' @examples
+#' \donttest{
+#' library(ggoxford)
+#'
+#' mockForestPlotData()
+#' }
+#'
+mockForestPlotData <- function(seed = 1, numRows = 10) {
+  set.seed(seed = seed)
+  res <- dplyr::tibble(
+    group_name = paste0("Outcome ", 1:numRows),
+    group_level = "Cohort 1",
+    strata_name = "Overall",
+    strata_level = "Overall",
+    estimate = stats::runif(n = numRows, min = 0.51, max = 3.01),
+    lowCi = estimate - 0.5,
+    highCi = estimate + 0.5
+  )
+  return(res)
+}
