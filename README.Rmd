@@ -39,39 +39,6 @@ devtools::install_github("oxford-pharmacoepi/ggoxford")
 
 ## Example usage
 
-The ggOxford package is designed to work with data in the OMOP CDM
-format, so our first step is to create a reference to the data using the
-CDMConnector package.
-
-``` r
-library(CDMConnector)
-library(ggoxford)
-library(dplyr)
-```
-
-Creating a connection to a Postgres database would for example look
-like:
-
-``` r
-con <- DBI::dbConnect(
-  RPostgres::Postgres(),
-  dbname = Sys.getenv("CDM5_POSTGRESQL_DBNAME"),
-  host = Sys.getenv("CDM5_POSTGRESQL_HOST"),
-  user = Sys.getenv("CDM5_POSTGRESQL_USER"),
-  password = Sys.getenv("CDM5_POSTGRESQL_PASSWORD")
-)
-
-cdm <- cdm_from_con(
-  con,
-  cdm_schema = Sys.getenv("CDM5_POSTGRESQL_CDM_SCHEMA"),
-  write_schema = Sys.getenv("CDM5_POSTGRESQL_RESULT_SCHEMA")
-)
-```
-
-To see how you would create a reference to your database please consult
-the CDMConnector package
-[documentation](https://darwin-eu.github.io/CDMConnector/articles/a04_DBI_connection_examples.html).
-
 ### Create a box plot
 
 To create a box plot, we would use the command
@@ -94,7 +61,7 @@ variable <- "age"
 box_plot(my_data,"Cohort 1","Overall","Overall","age")
 ```
 
-![](BoxPlot.png)
+![](Box%20Plot.png)
 
 ### Create a forest plot
 
@@ -116,7 +83,7 @@ For example,
 
 > result \<- forestPlot(df, "label", "mean", "lower", "upper")
 >
-> ![](ForestPlot.png)
+> ![](Forest%20plot.png)
 
 ### Create mockSummarisedResult
 
