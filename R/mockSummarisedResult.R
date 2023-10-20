@@ -11,7 +11,7 @@
 #' \donttest{
 #' library(ggoxford)
 #'
-#' mockSummarisedResult(seed = 1,as.Date("2021-01-01"),as.Date("2021-12-31"))
+#' mockSummarisedResult(seed = 1,as.Date("2021-01-01"),as.Date("2021-12-31"),10)
 #' }
 #'
 mockSummarisedResult <- function(seed = 1, startDate=as.Date("2021-01-01"), endDate=as.Date("2021-12-31"), populationSize=10) {
