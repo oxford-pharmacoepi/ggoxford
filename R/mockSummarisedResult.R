@@ -16,8 +16,8 @@
 #'
 mockSummarisedResult <- function(seed = 1, startDate=as.Date("2021-01-01"), endDate=as.Date("2021-12-31"), populationSize=10) {
   errorMessage <- checkmate::makeAssertCollection()
-  data_check <- checkmate::assertNumber(populationSize, add =errorMessage)
-  seed_check <- checkmate::assertNumber(seed, add =errorMessage)
+  data_check <- checkmate::assertNumber(populationSize, add = errorMessage)
+  seed_check <- checkmate::assertNumber(seed, add = errorMessage)
   checkmate::reportAssertions(collection = errorMessage)
   set.seed(seed = seed)
   res <- dplyr::tibble(
@@ -36,7 +36,8 @@ mockSummarisedResult <- function(seed = 1, startDate=as.Date("2021-01-01"), endD
     PatientProfiles::addCategories(
       variable = "age",
       categories = list("age_group" = list(
-        c(0, 19), c(20, 39), c(40, 59), c(60, 79), ">=80" = c(80, Inf)
+        c(0, 19), c(20, 39), c(40, 59), c(60, 79),
+        ">=80" = c(80, Inf)
       ))
     ) |>
     dplyr::select(
@@ -45,7 +46,7 @@ mockSummarisedResult <- function(seed = 1, startDate=as.Date("2021-01-01"), endD
     ) |>
     PatientProfiles::summariseResult(
       group = list("cohort_name"),
-      includeOverallGroup = FALSE,
+      includeOverallGroup = TRUE,
       strata = list("age_group", "sex"),
       includeOverallStrata = TRUE,
       minCellCount = 1
