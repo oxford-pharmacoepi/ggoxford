@@ -55,8 +55,81 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="ggoxford">ggoxford<a class="anchor" aria-label="anchor" href="#ggoxford"></a>
 </h1></div>
-<!-- badges: start -->
-
+<div class="section level2">
+<h2 id="package-overview">Package overview<a class="anchor" aria-label="anchor" href="#package-overview"></a>
+</h2>
+<p>The ggOxford package provides functions for plotting and visualising data according to a particular theme and pallette. The types of plots supported by the package include box plots, forest plots and bar charts. The package also allows the creation of mock data sets, such as mockForestPlotData, as well as providing the functions mockSummariseLargeScaleCharacteristics and mockSummarisedResult for the user’s convenience.</p>
+</div>
+<div class="section level2">
+<h2 id="package-installation">Package installation<a class="anchor" aria-label="anchor" href="#package-installation"></a>
+</h2>
+<p>You can install the latest version of ggOxford like so:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"oxford-pharmacoepi/ggoxford"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="example-usage">Example usage<a class="anchor" aria-label="anchor" href="#example-usage"></a>
+</h2>
+<div class="section level3">
+<h3 id="create-a-box-plot">Create a box plot<a class="anchor" aria-label="anchor" href="#create-a-box-plot"></a>
+</h3>
+<p>To create a box plot, we would use the command</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/box_plot.html">box_plot</a></span><span class="op">(</span><span class="va">my_data</span>, <span class="va">group_level</span>, <span class="va">strata_name</span>, <span class="va">strata_level</span>, <span class="va">variable</span><span class="op">)</span></span></code></pre></div>
+<p>where “my_data” is the dataset to use and “variable” is the variable to plot over.</p>
+<p>For example,</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">my_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/mockSummarisedResult.html">mockSummarisedResult</a></span><span class="op">(</span>seed <span class="op">=</span> <span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2021-01-01"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2021-12-31"</span><span class="op">)</span>, <span class="fl">100</span><span class="op">)</span></span>
+<span><span class="va">group_level</span> <span class="op">&lt;-</span> <span class="st">"Cohort 1"</span></span>
+<span><span class="va">strata_name</span> <span class="op">&lt;-</span> <span class="st">"Overall"</span></span>
+<span><span class="va">strata_level</span> <span class="op">&lt;-</span> <span class="st">"Overall"</span></span>
+<span><span class="va">variable</span> <span class="op">&lt;-</span> <span class="st">"age"</span></span>
+<span><span class="fu"><a href="reference/box_plot.html">box_plot</a></span><span class="op">(</span><span class="va">my_data</span>,<span class="st">"Cohort 1"</span>,<span class="st">"Overall"</span>,<span class="st">"Overall"</span>,<span class="st">"age"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="BoxPlot.png"></p>
+</div>
+<div class="section level3">
+<h3 id="create-a-forest-plot">Create a forest plot<a class="anchor" aria-label="anchor" href="#create-a-forest-plot"></a>
+</h3>
+<p>To create a forest plot, we would use the command</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/forestPlot.html">forestPlot</a></span><span class="op">(</span><span class="va">my_data</span>, <span class="va">outcomelabels</span>, <span class="va">estimate</span>, <span class="va">lowCi</span>, <span class="va">highCi</span><span class="op">)</span></span></code></pre></div>
+<p>where “my_data” is the dataset to use, “outcomelabels” is the column containing the labels, and “lowCi”, “highCi” are the low and high 95 % confidence interval values respectively.</p>
+<p>For example,</p>
+<blockquote>
+<p>df &lt;- data.frame( label = paste0(“X”, 1:6), mean = c(1.30, 0.62, 2.00, 1.10, 0.83, 1.4), lower = c(0.80, 0.49, 1.50, 1.04, 0.72, 1.11), upper = c(2.01, 0.97, 3.00, 1.25, 1.08, 1.56) )</p>
+</blockquote>
+<blockquote>
+<p>result &lt;- forestPlot(df, “label”, “mean”, “lower”, “upper”)</p>
+<p><img src="ForestPlot.png"></p>
+</blockquote>
+</div>
+<div class="section level3">
+<h3 id="create-mocksummarisedresult">Create mockSummarisedResult<a class="anchor" aria-label="anchor" href="#create-mocksummarisedresult"></a>
+</h3>
+<p>To use the function mockSummarisedResult, we employ the command</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/mockSummarisedResult.html">mockSummarisedResult</a></span><span class="op">(</span><span class="va">seed</span>, <span class="va">startDate</span>, <span class="va">endDate</span>, <span class="va">populationSize</span><span class="op">)</span></span></code></pre></div>
+<p>where “seed” is the seed for the random mock data generated, “startDate”, “endDate” are the start and end dates for the data, and “populationSize” is the size of the population to use.</p>
+<p>For example,</p>
+<blockquote>
+<p>&gt; mockSummarisedResult(1, as.Date(“2021-01-01”), as.Date(“2021-12-31”), 10)</p>
+<p># A tibble: 404 × 9</p>
+<p>group_name group_level strata_name strata_level variable variable_level variable_type <chr><chr><chr><chr><chr><chr><chr><br>
+1 cohort_name Cohort 1 Overall Overall number subjec… NA NA<br>
+2 cohort_name Cohort 1 Overall Overall number records NA NA<br>
+3 cohort_name Cohort 1 Overall Overall cohort_start_… NA date<br>
+4 cohort_name Cohort 1 Overall Overall cohort_start_… NA date<br>
+5 cohort_name Cohort 1 Overall Overall cohort_start_… NA date<br>
+6 cohort_name Cohort 1 Overall Overall cohort_start_… NA date<br>
+7 cohort_name Cohort 1 Overall Overall cohort_start_… NA date<br>
+8 cohort_name Cohort 1 Overall Overall cohort_end_da… NA date<br>
+9 cohort_name Cohort 1 Overall Overall cohort_end_da… NA date<br>
+10 cohort_name Cohort 1 Overall Overall cohort_end_da… NA date<br>
+# ℹ 394 more rows # ℹ 2 more variables: estimate_type <chr>, estimate <chr> # ℹ Use <code>print(n = ...)</code> to see more rows</chr></chr></chr></chr></chr></chr></chr></chr></chr></p>
+</blockquote>
+</div>
+</div>
 </div>
   </main><aside class="col-md-3"><div class="license">
 <h2 data-toc-skip>License</h2>
@@ -90,12 +163,7 @@
 </ul>
 </div>
 
-<div class="dev-status">
-<h2 data-toc-skip>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://github.com/oxford-pharmacoepi/ggoxford/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/oxford-pharmacoepi/ggoxford/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-</ul>
-</div>
+
 
   </aside>
 </div>
