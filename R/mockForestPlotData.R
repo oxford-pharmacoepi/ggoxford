@@ -12,29 +12,24 @@
 #' mockForestPlotData()
 #' }
 #'
-mockForestPlotData <- function(seed = 1, numVars = 10) {
+
+mockForestPlotData <- function(seed = 1, numVars = 8) {
   set.seed(seed = seed)
-  for (i in 1:numVars){
-  row1 <- dplyr::tibble(
+  rows1 <- dplyr::tibble(
     group_name = "Cohort_name",
     group_level = "Cohort 1",
     strata_name = "Overall",
     strata_level = "Overall",
-    variable = paste0("Variable ", i),
+    variable = paste0("Variable ", 1:numVars),
     variable_level = NA,
     variable_type = "numeric",
-    estimate = round((stats::runif(n = 1, min = 0.51, max = 3.01)),2),
-    estimate_type = "Central value"
+    estimate = round((stats::runif(n = numVars, min = 0.2, max = 0.6)),2),
+    estimate_type = "Lower 95% CI",
+    se = round((stats::runif(n = numVars, min = 0.1, max = 0.25)),2)
   )
-  row2 <- row1 |> dplyr::mutate(estimate = estimate - round((stats::runif(n = 1, min = 0.25, max = 0.75)),2))
-  row2 <- row2 |> dplyr::mutate(estimate_type = "Lower 95% CI")
-  row3 <- row1 |> dplyr::mutate(estimate = estimate + round((stats::runif(n = 1, min = 0.25, max = 0.75)),2))
-  row3 <- row3 |> dplyr::mutate(estimate_type = "Higher 95% CI")
-
-  if (i==1){
-    result <- rbind(row1,row2,row3)}
-  else{
-    result <- rbind(result,row1,row2,row3)}
-  }
+  rows2 <- rows1 |> dplyr::mutate(estimate = round(exp(estimate - 1.96*se),2)) |> dplyr::mutate(estimate_type = "Central value")
+  rows3 <- rows1 |> dplyr::mutate(estimate = round(exp(estimate + 1.96*se),2)) |> dplyr::mutate(estimate_type = "Higher 95% CI")
+  result <- rbind(rows1,rows2,rows3)
+  result <- result |> dplyr::select(-c("se")) |> dplyr::arrange(variable)
   return(result)
 }
