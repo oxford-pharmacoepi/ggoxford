@@ -36,4 +36,5 @@ Imports:
     PatientProfiles,
     rlang,
     tidyr,
-    stats
+    stats,
+    DrugUtilisation
