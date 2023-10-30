@@ -3,6 +3,7 @@
 export("%>%")
 export(box_plot)
 export(forestPlot)
+export(mockForestPlotData)
 export(mockSummarisedResult)
 export(plotBarChart)
 importFrom(magrittr,"%>%")
