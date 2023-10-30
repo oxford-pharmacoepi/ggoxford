@@ -7,11 +7,6 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
-#' library(ggoxford)
-#'
-#' mockSummariseLargeScaleCharacteristics()
-#' }
 #'
 mockSummariseLargeScaleCharacteristics <- function(populationSize = 10,
                                                    window = list(c(-Inf, -366), c(-365, -31), c(-30, -1), c(1, 30), c(31, 365), c(366, Inf)),
