@@ -24,11 +24,3 @@ mockSummariseLargeScaleCharacteristics(
 \description{
 Function to create mock summarised large-scale characteristics.
 }
-\examples{
-\donttest{
-library(ggoxford)
-
-mockSummariseLargeScaleCharacteristics()
-}
-
-}
