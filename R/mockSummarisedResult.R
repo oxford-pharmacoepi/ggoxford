@@ -1,6 +1,8 @@
 #' Function to create a mock summarised result tibble.
 #'
 #' @param seed Seed value for the random mock data generated
+#' @param startDate Start date for the mock data
+#' @param endDate End date for the mock data
 #' @param populationSize choose size of the population
 #'
 #' @export
@@ -9,10 +11,10 @@
 #' \donttest{
 #' library(ggoxford)
 #'
-#' mockSummarisedResult()
+#' mockSummarisedResult(seed = 1,as.Date("2021-01-01"),as.Date("2021-12-31"),10)
 #' }
 #'
-mockSummarisedResult <- function(seed = 1, populationSize = 10) {
+mockSummarisedResult <- function(seed = 1, startDate=as.Date("2021-01-01"), endDate=as.Date("2021-12-31"), populationSize=10) {
   errorMessage <- checkmate::makeAssertCollection()
   data_check <- checkmate::assertNumber(populationSize, add = errorMessage)
   seed_check <- checkmate::assertNumber(seed, add = errorMessage)
@@ -21,8 +23,7 @@ mockSummarisedResult <- function(seed = 1, populationSize = 10) {
   res <- dplyr::tibble(
     subject_id = 1:populationSize,
     cohort_start_date = as.Date(
-      stats::runif(n = populationSize, min = 14610, max = 18627),
-      origin = "1970-01-01"
+      stats::runif(n = populationSize, min = 0, max = as.numeric(.env$endDate - .env$startDate)), origin = as.Date(.env$startDate)
     ),
     age = sample(x = 0:80, size = populationSize, replace = TRUE),
     sex = sample(x = c("Male", "Female"), size = populationSize, replace = TRUE),
@@ -30,7 +31,7 @@ mockSummarisedResult <- function(seed = 1, populationSize = 10) {
     blood_type = sample(x = c("0", "a", "b", "ab"), size = populationSize, replace = TRUE)
   ) |>
     dplyr::mutate(cohort_end_date = .data$cohort_start_date + stats::runif(
-      n = populationSize, min = 0, max = 800
+      n = populationSize, min = 0, max = as.numeric(.env$endDate - .data$cohort_start_date)
     )) |>
     PatientProfiles::addCategories(
       variable = "age",
